@@ -225,12 +225,13 @@ ggplot(movies_cleaned,
   
 ```{r, gross_on_fblikes}
 ggplot(movies_cleaned,
-       aes(x=gross,y=cast_facebook_likes))+
+       aes(x=cast_facebook_likes,y=gross))+
   geom_point()+
+  xlim(0,150000)+
   geom_smooth(method = "lm")
-  labs(title= "Gross Profit and Cast Facebook Likes",
-       x= "Gross Profit",
-       y= "Cast Facebook Likes")+
+  labs(title= "Gross Profit vs Cast Facebook Likes",
+       x= "Cast Facebook Likes",
+       y= "Gross Profit")+
   theme_bw()
 
 ```
