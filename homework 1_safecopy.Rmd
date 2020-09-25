@@ -228,9 +228,11 @@ ggplot(movies_cleaned,
 ggplot(movies_cleaned,
        aes(x=gross,y=cast_facebook_likes))+
   geom_point()+
+  geom_smooth(method = "lm")
   labs(title= "Gross Profit and Cast Facebook Likes",
        x= "Gross Profit",
-       y= "Cast Facebook Likes")
+       y= "Cast Facebook Likes")+
+  theme_bw()
 
 ```
 
