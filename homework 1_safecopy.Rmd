@@ -240,13 +240,13 @@ ggplot(movies_cleaned,
 
 ```{r, gross_on_budget}
 ggplot(movies_cleaned,
-       aes(x=gross,y=budget))+
+       aes(x=budget,y=gross))+
   geom_point()+
   geom_smooth(method="lm")+
   theme_bw()
-  labs(title= "Gross Profit and Budget",
-       x= "Gross Profit",
-       y= "Budget")
+  labs(title= "Budget vs Gross Profit",
+       x= "Budget",
+       y= "Gross Profit")
 
 ```
   
@@ -259,7 +259,7 @@ ggplot(movies_cleaned,
            colour=genre,
            alpha=0.2))+
   geom_point()+
-  labs(title= "Gross Profit and Rating according to Genre",
+  labs(title= "Gross Profit vs Rating according to Genre",
        x= "Rating",
        y= "Gross Profit")+
   facet_wrap(~genre)
