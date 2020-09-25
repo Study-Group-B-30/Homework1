@@ -130,9 +130,8 @@ ggplot(top_25_spirit_servings,
   NULL
 ```
   
-What can you infer from these plots? Don't just explain what's in the graph, but speculate or tell a short story (1-2 paragraphs max).
-
-
+> TYPE YOUR ANSWER AFTER (AND OUTSIDE!) THIS BLOCKQUOTE.
+The countries which have the largest production of that kind of drink is also the ones which has the largest consumption.For instance, France is the one which has the largest production of wine and it has the largest consumption of wine.
 
 # Analysis of movies- IMDB dataset
 
