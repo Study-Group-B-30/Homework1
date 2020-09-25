@@ -242,6 +242,8 @@ ggplot(movies_cleaned,
 ggplot(movies_cleaned,
        aes(x=gross,y=budget))+
   geom_point()+
+  geom_smooth(method="lm")+
+  theme_bw()
   labs(title= "Gross Profit and Budget",
        x= "Gross Profit",
        y= "Budget")
@@ -283,10 +285,12 @@ Based on this dataset, create a table and a bar plot that shows the number of co
 ```{r companies_per_sector}
 glimpse(nyse)
 
-nyse %>% 
-  group_by(sector) %>% 
-  summarise(number_companies=n_distinct(name)) %>% 
-  arrange(desc(number_companies))
+# companies per sector
+glimpse(nyse)
+company_per_sector <- nyse %>% group_by(sector)%>% count("name") %>% 
+  arrange(desc(n))%>% select ("sector","n")%>% rename(number_of_company=n)
+# Bar Plot
+ggplot(company_per_sector,aes(y=reorder(sector,number_of_company), x=number_of_company))+geom_col()+labs(title="Number of companies per sector",x="Number of company",y="Sector") +theme_economist()
 ```
 
 Next, let's choose the [Dow Jones Industrial Avearge (DJIA)](https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average) stocks and their ticker symbols and download some data. Besides the thirty stocks that make up the DJIA, we will also add `SPY` which is an SP500 ETF (Exchange Traded Fund).
